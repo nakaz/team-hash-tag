@@ -1,3 +1,4 @@
+
 <head>
   <title>Team Hash Tag</title>
   <link rel="stylesheet" type="text/css" href="../css/styles.css">
@@ -7,19 +8,23 @@
 
   <h1>#TeamHashTag!</h1>
   <h1>THIS is Team Hash Tag</h1>
-
 </body>
 
 <template name="layout">
   <div id="search-hash-tag">
     <!-- input here -->
-  </div>
-  <div class="container">
-    {{> yield}}
+    <div id="search-box">
+      <form name="search-hash-tag">
+        <input name="search-query" />
+      </form>
+    </div>
+    <div class="container">
+    {{> dashboard}}
+    </div>
   </div>
 </template>
 
 <template name="dashboard">
-  This is the dashboard with all the goodies!
+  <h1>This is the dashboard with all the goodies!</h1>
   <h1>Whoohoooooo!</h1>
 </template>
