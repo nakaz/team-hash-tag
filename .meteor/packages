@@ -8,3 +8,4 @@ meteor-platform
 accounts-twitter
 bozhao:accounts-instagram
 service-configuration
+accounts-ui

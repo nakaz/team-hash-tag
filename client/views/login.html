@@ -1,0 +1,24 @@
+<head>
+
+</head>
+<body>
+
+  {{#if currentUser}}
+    {{> user}}
+  {{else}}
+    {{> loginButtons}}
+  {{/if}}
+
+</body>
+
+<template name="user">
+    <input type="button" id="signOut" value="Sign Out" />
+    <h2>Your Information</h2>
+    <ul>
+      <li>Screen Name:    {{currentUser.profile.name}}</li>
+    </ul>
+  </template>
+
+  <template name="login">
+    <input type="button" id="SignIn" value="Sign In" />
+  </template>

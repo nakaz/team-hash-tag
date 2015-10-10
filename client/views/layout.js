@@ -1,19 +1,44 @@
-Template.dashboard.created = function (){
-  console.log('dashboard created');
-};
+if (Meteor.isClient) {
 
-Template.dashboard.rendered = function (){
-  console.log('dashboard rendered');
-};
 
-Template.dashboard.destroyed = function (){
-  console.log('dashboard destroyed');
-};
+  Template.login.events({
+    'click #signIn' : function() {
+      Meteor.loginWithTwitter();
+    }
+  });
 
-Template.dashboard.helpers({
+  Template.user.events({
+    'click #signOut' : function() {
+      Meteor.logout();
+    }
+  });
 
-});
+  Template.dashboard.created = function (){
+    console.log('dashboard created');
+  };
 
-Template.dashboard.events({
+  Template.dashboard.rendered = function (){
+    console.log('dashboard rendered');
+  };
 
-});
+  Template.dashboard.destroyed = function (){
+    console.log('dashboard destroyed');
+  };
+
+  Template.dashboard.helpers({
+
+  });
+
+  Template.dashboard.events({
+
+  });
+}
+
+
+
+if (Meteor.isServer) {
+  Meteor.startup(function () {
+    // code to run on server at startup
+
+  });
+}
