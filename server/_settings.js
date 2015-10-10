@@ -1,4 +1,4 @@
-if (typeof Meteor.settings === 'undefined')
+if (typeof Meteor.settings === 'undefined') {
   Meteor.settings = {};
 
   _.defaults(Meteor.settings, {
@@ -15,15 +15,15 @@ if (typeof Meteor.settings === 'undefined')
         consumerKey: Meteor.settings.twitter.consumerKey,
         secret: Meteor.settings.twitter.secret
       }
-    }
-  );
+  });
 
-  ServiceConfiguration.configurations.upsert(
-    { service: "instagram" },
-    {
-      $set: {
-        clientID: "e56af2319b304822a584c0288632f447",
-        secret: "4b9ec825088449a9873f84f4c4f77014"
-      }
-    }
-);
+  ServiceConfiguration.configurations.remove({
+      service: "instagram"
+  });
+    ServiceConfiguration.configurations.insert({
+      service: "instagram",
+      clientId: "e56af2319b304822a584c0288632f447",
+      scope:'basic',
+      secret: "4b9ec825088449a9873f84f4c4f77014"
+  });
+}
