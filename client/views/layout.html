@@ -5,16 +5,15 @@
 
 <body>
   <h1>THIS is Team Hash Tag</h1>
-</body>
-
-<template name="layout">
-  <div id="search-hash-tag">
-    <!-- input here -->
+  <div id="search-box">
+    <form name="search-hash-tag">
+      <input name="search-query">
+    </form>
   </div>
   <div class="container">
-    {{> yield}}
+    {{> dashboard}}
   </div>
-</template>
+</body>
 
 <template name="dashboard">
   This is the dashboard with all the goodies!
