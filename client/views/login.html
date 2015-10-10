@@ -1,0 +1,32 @@
+<head>
+  <title>
+    Twitter and Instagram Login
+  </title>
+</head>
+<body>
+  <h1>
+    Twitter Login
+  </h1>
+  {{#if currentUser}}
+    {{> user}}
+  {{else}}
+    {{> login}}
+  {{/if}}
+
+  <template name="user">
+    <input type="button" id="signOut" value="Sign Out" />
+    <h2>Your Information</h2>
+    <ul>
+      <li>Meteor ID:      {{currentUser._id}}</li>
+      <li>Meteor Name:    {{{currentUser.profile.name}}</li>
+      <li>Twitter ID:     {{currentUser.services.twitter.id}}</li>
+      <li>Screen Name:    {{currentUser.profile.name}}</li>
+      <li>Profile Img URL:  {{currentUser.services.twitter.profile_image_url}}</li>
+    </ul>
+  </template>
+
+  <template name="login">
+    <input type="button" id="SignIn" value="Sign In" />
+  </template>
+
+</body>
