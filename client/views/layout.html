@@ -1,17 +1,25 @@
 <head>
-  <title>team-hash-tag</title>
+  <title>Team Hash Tag</title>
+  <link rel="stylesheet" type="text/css" href="../css/styles.css">
 </head>
 
 <body>
+
   <h1>#TeamHashTag!</h1>
-
-  {{> hello}}
-
-
+  <h1>THIS is Team Hash Tag</h1>
 
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="layout">
+  <div id="search-hash-tag">
+    <!-- input here -->
+  </div>
+  <div class="container">
+    {{> yield}}
+  </div>
+</template>
+
+<template name="dashboard">
+  This is the dashboard with all the goodies!
+  <h1>Whoohoooooo!</h1>
 </template>

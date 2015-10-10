@@ -5,11 +5,7 @@
 # but you can also edit it by hand.
 
 meteor-platform
-<<<<<<< HEAD
-autopublish
-insecure
 accounts-twitter
 bozhao:accounts-instagram
 service-configuration
-=======
->>>>>>> fda5c88673c5df837d15a44a47fd586a7a178f91
+accounts-ui
