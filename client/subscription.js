@@ -1,8 +1,7 @@
-Session.setDefault('searching', false);
+SessionStore.set('isSearchQuery', null);
 
 Tracker.autorun(function() {
-  if (Session.get('query')) {
+  if (SessionStore.get('isSearchQuery')) {
     var searchHandle = Meteor.subscribe('instaSearch', Session.get('query'));
-    Session.set('searching', ! searchHandle.ready());
   }
 });
