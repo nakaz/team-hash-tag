@@ -23,7 +23,6 @@ Template.dashboard.events({
   'submit form': function(event, template) {
     event.preventDefault();
     var query = template.$('input[type=text]').val();
-    console.log('submit');
     if (query){
       Session.set('query', query);
     }
