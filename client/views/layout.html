@@ -8,6 +8,13 @@
 
 <template name="layout">
   <h1>#TeamHashTag!</h1>
+  <div class="nav">
+    {{#if currentUser}}
+      {{> user}}
+    {{else}}
+      {{> loginButtons}}
+    {{/if}}
+  </div>
   <div class="container">
     {{> main}}
   </div>
@@ -33,4 +40,16 @@
 <template name="dashboard">
   <h1>This is the dashboard with all the goodies!</h1>
   <h1>Whoohoooooo!</h1>
+</template>
+
+<template name="user">
+  <input type="button" id="signOut" value="Sign Out" />
+  <h2>Your Information</h2>
+  <ul>
+    <li>Screen Name:    {{currentUser.profile.name}}</li>
+  </ul>
+</template>
+
+<template name="login">
+  <input type="button" id="SignIn" value="Sign In" />
 </template>
