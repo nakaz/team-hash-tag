@@ -1,5 +1,3 @@
-SessionStore.set('isSearchQuery', null);
-
 Template.main.created = function (){
   console.log('main created');
 };
@@ -13,6 +11,10 @@ Template.main.destroyed = function (){
 };
 
 Template.main.helpers({
+  instas: function() {
+    return InstaCollection.find();
+  },
+
   isSearchQuery: function (){
     return SessionStore.get('isSearchQuery');
   }
@@ -29,8 +31,8 @@ Template.main.events({
 function submitSearchQuery(evt, tmpl){
   var searchQuery = tmpl.find('#search-query').value;
   console.log(searchQuery);
-  SessionStore.set('isSearchQuery', true);
+  if (searchQuery){
+    SessionStore.set('isSearchQuery', true);
+  }
 
 }
-
-
