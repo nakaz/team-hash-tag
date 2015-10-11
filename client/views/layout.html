@@ -14,10 +14,32 @@
   </div>
   <div class="container">
     {{> dashboard}}
+    {{#if searching}}
+      <p>Searching...</p>
+    {{else}}
+      {{#if instas.count}}
+        <hr>
+        <table>
+          {{#each instas}}
+            {{> insta}}
+          {{/each}}
+        </table>
+      {{/if}}
+    {{/if}}
   </div>
 </body>
 
 <template name="dashboard">
   This is the dashboard with all the goodies!
   <h1>Whoohoooooo!</h1>
+</template>
+
+<template name="insta">
+  <tr>
+    <td class="image"><img src="{{thumb}}"></td>
+    <td>
+      <a href="{{link}}" target="_blank">{{title}}</a>
+      <p>{{{snippet}}}</p>
+    </td>
+  </tr>
 </template>
