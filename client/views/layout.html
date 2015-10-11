@@ -1,45 +1,36 @@
+
 <head>
   <title>Team Hash Tag</title>
   <link rel="stylesheet" type="text/css" href="../css/styles.css">
 </head>
 
-<body>
-  <h1>THIS is Team Hash Tag</h1>
-  <div id="search-box">
-    <form name="search-hash-tag">
-      <input name="search-query" type="text">
-      <input type="submit" value="Search">
-    </form>
+<body></body>
 
-  </div>
+<template name="layout">
+  <h1>#TeamHashTag!</h1>
   <div class="container">
-    {{> dashboard}}
-    {{#if searching}}
-      <p>Searching...</p>
-    {{else}}
-      {{#if instas.count}}
-        <hr>
-        <table>
-          {{#each instas}}
-            {{> insta}}
-          {{/each}}
-        </table>
-      {{/if}}
-    {{/if}}
+    {{> main}}
   </div>
-</body>
-
-<template name="dashboard">
-  This is the dashboard with all the goodies!
-  <h1>Whoohoooooo!</h1>
 </template>
 
-<template name="insta">
-  <tr>
-    <td class="image"><img src="{{thumb}}"></td>
-    <td>
-      <a href="{{link}}" target="_blank">{{title}}</a>
-      <p>{{{snippet}}}</p>
-    </td>
-  </tr>
+<template name="main">
+  <div class="nav">
+    <h3>Enter HashTag Here!</h3>
+    <div id="search-box">
+      <input id="search-query" placeholder="enter search">
+    </div>
+  </div>
+
+  <div class="wrapper">
+    {{#if isSearchQuery}}
+      {{> dashboard}}
+    {{else}}
+    {{/if}}
+  </div>
+
+</template>
+
+<template name="dashboard">
+  <h1>This is the dashboard with all the goodies!</h1>
+  <h1>Whoohoooooo!</h1>
 </template>
