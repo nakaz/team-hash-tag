@@ -9,3 +9,5 @@ accounts-twitter
 bozhao:accounts-instagram
 service-configuration
 accounts-ui
+smeevil:session-store
+iron:router
